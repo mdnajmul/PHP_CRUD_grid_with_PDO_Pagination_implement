@@ -1,0 +1,35 @@
+we want to show 5 data at every page from our database
+Example:
+    1st page show: 1 t0 5 row data from database
+    2nd page show: 6 t0 10 row data from database
+    3rd page show: 11 t0 15 row data from database
+    4th page show: 16 t0 20 row data from database
+    ..........
+    ..........
+    continue till end total data
+    
+    
+//Now create logic for create this type of page
+
+    we show per page data = 5
+    our total record/data = 100
+    
+    $per_page=5;
+    $total_record=100;
+    
+    we use LIMIT inside our select query
+    LIMIT will be:
+        0,5   //here, $x=0;$per_page=5;
+        5,5   //here, $x=5;$per_page=5;
+        10,5  //here, $x=10;$per_page=5;
+        15,5  //here, $x=15;$per_page=5;
+        20,5  //here, $x=20;$per_page=5;
+        .....
+        .....
+        
+    Now, we run a loop & loop start from $i=1 value
+            //create $x variable
+            $x=($i-1)*$per_page; // 1st iteration, $i=1; $x=(1-1)*5=0 // // 2nd iteration, $i=2; $x=(2-1)*5=5 // 3rd iteration, $i=3; $x=(3-1)*5=10
+        
+        
+        
